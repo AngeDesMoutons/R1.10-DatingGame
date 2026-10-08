@@ -1,0 +1,10 @@
+:: StoryTitle
+Simulator Dating
+
+:: StoryData
+{
+    "ifid": "06ACBFF6-5C46-4907-8F3E-C10CDC83205A",
+    "format": "SugarCube",
+    "format-version": "2.30.0",
+    "start": "Start"
+}

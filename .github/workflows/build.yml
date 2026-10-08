@@ -1,0 +1,41 @@
+name: Build et publication
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Installer Tweego
+        run: go install github.com/tmedwards/tweego@latest
+      - name: Compiler le jeu
+        env:
+          TWEEGO_PATH: ${{ github.workspace }}/storyformats
+        run: |
+          mkdir -p dist
+          $(go env GOPATH)/bin/tweego -o dist/index.html src
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
