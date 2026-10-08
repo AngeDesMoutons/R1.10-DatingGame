@@ -11,21 +11,26 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+    build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: stable
-      - name: Installer Tweego
-        run: go install github.com/tmedwards/tweego@latest
+
+      - name: Télécharger Tweego
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo tmedwards/tweego --pattern '*linux-x64*.zip' --output tweego.zip
+          unzip -q tweego.zip -d tweego-bin
+          chmod +x tweego-bin/tweego
+
       - name: Compiler le jeu
         env:
           TWEEGO_PATH: ${{ github.workspace }}/storyformats
         run: |
           mkdir -p dist
-          $(go env GOPATH)/bin/tweego -o dist/index.html src
+          ./tweego-bin/tweego -o dist/index.html src
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
