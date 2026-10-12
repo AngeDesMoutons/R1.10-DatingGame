@@ -287,12 +287,3 @@ Utilisable ensuite dans un passage : `<<print setup.persos.camille.nom>>`.
 ### Écrire en Markdown (pour ce guide, le README, les Issues)
 
 - https://www.markdownguide.org
-
----
-
-## 11. Parcours conseillé pour démarrer
-
-1. **Semaine 1, Git et le circuit de travail.** Jouer à Oh My Git! ou Learn Git Branching (1 à 2 h), installer les outils, puis faire une première Pull Request d'essai qui ajoute un passage de test.
-2. **Semaine 2, Twee et SugarCube.** Lire dans la doc SugarCube les sections *Markup*, *Macros* (`set`, `if`, `link`, `include`) et *Special Passages*. Écrire une petite scène avec deux choix et une variable.
-3. **Semaine 3, le style.** Faire Flexbox Froggy, modifier un peu `main.css` sur une branche d'essai, puis regarder le Twine Cookbook pour piocher des idées.
-4. **Ensuite** : JavaScript et macros avancées pour ceux que ça intéresse. Tout le monde n'a pas besoin de coder, l'écriture compte autant !

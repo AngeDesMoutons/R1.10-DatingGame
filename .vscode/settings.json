@@ -1,0 +1,5 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}\\tools\\git\\cmd;${workspaceFolder}\\tools\\tweego;${env:PATH}"
+  }
+}
