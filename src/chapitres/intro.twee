@@ -1,7 +1,7 @@
 :: Start
 <div class="centre">
 	<h1>Simulator Dating</h1>
-	<p class="image">[Image of: a big pink heart with a crack in it]</p>
+	<p class="image">[Image of: logo]</p>
 	<div class="choix">[[PLAY|Intro_Prenoms]]</div>
 </div>
 
@@ -20,10 +20,10 @@
 
 :: Intro_Difficulte
 <h2>Choose the difficulty</h2>
-<p>Same girl. Same face. Completely different personality. Scientists still can't explain it.</p>
+<p>Same girl. Same face. Completely different personality. A little bit weird.</p>
 <div class="mode">
 	<div class="choix">[[🐶 EASY : Golden Retriever Mode|DM_1_Accroche][$difficile to false]]</div>
-	<p>She had her morning coffee. Then a second one. Then a third one. Then she saw a dog. She loves everything and everyone. Probably even you.</p>
+	<p>She had her morning coffee. She loves everything and everyone. Probably even you. A Golden Retriever... WOOf WOOF</p>
 </div>
 <div class="mode">
 	<div class="choix">[[🧊 HARD : Left On Read Mode|DM_1_Accroche][$difficile to true]]</div>
