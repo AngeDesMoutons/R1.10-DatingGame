@@ -1,0 +1,30 @@
+:: StoryInit
+<<set $prenom to "">>
+<<set $prenomFille to "Idiou">>
+<<set $difficile to false>>
+<<set $sansRetour to false>>
+
+<<set $interet to 0>>
+<<set $genance to 0>>
+
+<<set $lieu to "">>
+<<set $arrivee to "">>
+<<set $choix to "">>
+<<set $homard to false>>
+
+:: StoryCaption
+<<if $interet gt 100>><<set $interet to 100>><</if>>
+<<if $genance gt 100>><<set $genance to 100>><</if>>
+<<if $prenom isnot "">>
+	<p>💘 Interest : $interet / 100<br><progress @value="$interet" max="100"></progress></p>
+	<p>😬 Cringe : $genance / 100<br><progress @value="$genance" max="100"></progress></p>
+	<p class="petit">
+	<<if $genance gte 80>>She's about to call the police
+	<<elseif $genance gte 50>>She's screenshotting this for the group chat
+	<<elseif $genance gte 20>>A bit weird
+	<<else>>Normal (for now)
+	<</if>>
+	</p>
+<</if>>
+
+<<if $sansRetour>><style>#ui-bar-history { display: none; }</style><</if>>

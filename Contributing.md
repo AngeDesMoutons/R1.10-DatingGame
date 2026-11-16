@@ -179,9 +179,11 @@ Dans `00_Widgets.twee`, avec le tag `[widget]` :
 ```
 :: Widgets [widget]
 <<widget "parle">>
-<div class="dialogue"><span class="perso">_args[0]</span> : _args[1]</div>
+<div class="dialogue"><span class="perso"><<print $args[0]>></span> : <<print $args[1]>></div>
 <</widget>>
 ```
+
+**Attention :** en SugarCube 2.30, les arguments d'un widget s'écrivent `$args[0]`, `$args[1]`… (`_args` n'existe qu'à partir de la 2.36 et n'affiche rien chez nous).
 
 Utilisation dans n'importe quel passage : `<<parle "Camille" "Tu viens souvent ici ?">>`
 

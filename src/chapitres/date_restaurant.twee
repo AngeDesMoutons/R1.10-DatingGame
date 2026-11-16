@@ -1,0 +1,152 @@
+:: Resto_1_Arrivee [date]
+<<if $arrivee is "bus">><<set $genance += 10>><<else>><<set $genance += 5>><</if>>
+<p class="image">[Image of: a fancy restaurant. Way too fancy. The menu has no prices.]</p>
+<<if $arrivee is "bus">>
+	<p>You arrive 25 minutes late. The bus driver took a little detour to drop off his cousin.</p>
+<<else>>
+	<p>You arrive right on time, but drenched in sweat. The waiter hands you a napkin. Then a second one. Then the whole pile.</p>
+<</if>>
+<<if $difficile>>
+	<p>$prenomFille is already seated, on her phone. She looks up at you. Then back at her phone.</p>
+	<p><b>$prenomFille :</b> You're late.</p>
+<<else>>
+	<p>$prenomFille is already there. She ate the entire bread basket while waiting. And the butter. And the basket.</p>
+	<p><b>$prenomFille :</b> HIIII!!! SORRY I ATE ALL THE BREAD 🥖</p>
+<</if>>
+<p><b>Waiter :</b> Have you decided?</p>
+<div class="choix">
+	[[🦞 The golden lobster. The most expensive dish.|Resto_2_Fourchette][$choix to "homard"]]
+	[[🍟 Order for both of you, like a gentleman|Resto_2_Fourchette][$choix to "enfant"]]
+	[[🥗 Just a salad. You're watching your budget.|Resto_2_Fourchette][$choix to "salade"]]
+</div>
+
+
+:: Resto_2_Fourchette [date]
+<<if $choix is "homard">>
+	<<set $homard to true>>
+	<p>The waiter brings a lobster covered in gold leaf. It looks at you.</p>
+	<<if $difficile>>
+		<<set $interet += 15>>
+		<p><b>$prenomFille :</b> Finally, a man with ambition.</p>
+	<<else>>
+		<<set $interet += 20>>
+		<p><b>$prenomFille :</b> OMG A LOBSTER 🦞 CAN WE KEEP HIM? I'M NAMING HIM GERARD</p>
+	<</if>>
+<<elseif $choix is "enfant">>
+	<p>You order two kids' menus. With the toy.</p>
+	<<if $difficile>>
+		<<set $genance += 20>>
+		<p><b>$prenomFille :</b> I'm 22.</p>
+	<<else>>
+		<<set $interet += 25>>
+		<p><b>$prenomFille :</b> A TOY!!! 🧸 YOU UNDERSTAND ME</p>
+	<</if>>
+<<else>>
+	<p>You order a salad. Just leaves. No dressing. The waiter looks at you with pity.</p>
+	<<if $difficile>>
+		<<set $interet += 20>>
+		<p><b>$prenomFille :</b> Same. I respect that.</p>
+	<<else>>
+		<<set $interet += 10>>
+		<p><b>$prenomFille :</b> u can have some of my bread!! oh wait I ate it all 😭</p>
+	<</if>>
+<</if>>
+<p>Halfway through dinner, you drop your fork. It slides under the table.</p>
+<p>$prenomFille saw everything.</p>
+<div class="choix">
+	[[🤿 Dive under the table to get it back|Fin_Flambe]]
+	[[✋ Eat with your hands, like a caveman|Resto_3_Addition][$choix to "mains"]]
+	[[👋 Snap your fingers : "WAITER! A NEW FORK!"|Resto_3_Addition][$choix to "serveur"]]
+</div>
+
+
+:: Resto_3_Addition [date]
+<<if $choix is "mains">>
+	<<if $difficile>>
+		<<set $genance += 30>>
+		<p>You eat with your hands. $prenomFille takes a picture. Probably for the police report.</p>
+	<<else>>
+		<<set $interet += 20>>
+		<<set $genance += 10>>
+		<p>$prenomFille throws her fork away too.</p>
+		<p><b>$prenomFille :</b> FREEDOM!!! 🍝</p>
+	<</if>>
+<<else>>
+	<<if $difficile>>
+		<<set $interet += 20>>
+		<p>Everybody turns around. $prenomFille nods slowly.</p>
+		<p><b>$prenomFille :</b> Finally, someone who asks for what he wants.</p>
+	<<else>>
+		<<set $genance += 20>>
+		<p>The whole restaurant stops eating. A baby starts crying. $prenomFille hides behind the menu.</p>
+	<</if>>
+<</if>>
+<p>The waiter brings the bill : <b><<if $homard>>2,187.50 €<<else>>87.50 €<</if>></b></p>
+<div class="choix">
+	[[🐷 Pay with your piggy bank (only 1-cent coins)|Resto_4_Dehors][$choix to "pieces"]]
+	[[🎫 Pay with your meal vouchers (expired in 2019)|Fin_Plonge]]
+	[[🚽 "I'll be right back." Escape through the bathroom window|Fin_Coince]]
+	[[➗ Split the bill|Resto_4_Dehors][$choix to "partage"]]
+</div>
+
+
+:: Resto_4_Dehors [date]
+<<if $choix is "pieces">>
+	<<if $difficile>>
+		<<set $genance += 30>>
+		<p>Counting the coins takes 3 hours. $prenomFille paid her half by card and waited outside. For 3 hours. She is not happy.</p>
+	<<else>>
+		<<set $interet += 15>>
+		<p>$prenomFille helps you count the coins. 3 hours later, the chairs are on the tables, the lights are off, and she has never been this happy.</p>
+	<</if>>
+<<else>>
+	<<if $difficile>>
+		<p>She pays exactly her half. To the cent. She checked the math twice.</p>
+	<<else>>
+		<<set $interet += 10>>
+		<p><b>$prenomFille :</b> I ALREADY PAID WHILE U WERE LOOKING FOR UR FORK 💳</p>
+	<</if>>
+<</if>>
+<p>You walk her outside. A street lamp flickers above you. $prenomFille looks at you.</p>
+<p>This is it. The moment.</p>
+<div class="choix">
+	<<link "💋 Lean in for a kiss">>
+		<<if $interet gte 100>><<goto "Fin_Parfaite">>
+		<<elseif $interet gte 60>><<goto "Fin_Friendzone">>
+		<<else>><<goto "Fin_Esquive">>
+		<</if>>
+	<</link>>
+	[[🤝 Give her a firm, professional handshake|Fin_LinkedIn]]
+	[[👩 Invite her to meet your mom tomorrow|Fin_Adoptee]]
+</div>
+
+
+/* ---------- les fins du restaurant ---------- */
+
+:: Fin_Flambe [fin]
+<h1 class="titre-fin">FLAMBÉ 🔥</h1>
+<p class="sous-titre">You went under the table. The table did not like it.</p>
+<p class="image">[Image of: a restaurant on fire, a waiter calmly flambéing a lobster in the middle]</p>
+<p>You hit your head on the table. The candle falls. The tablecloth catches fire. The waiter thinks it's part of the show and flambés the lobster too.</p>
+<p>The fire alarm goes off. The sprinklers turn on. Everybody is evacuated. $prenomFille goes home. Wet.</p>
+<p>The fork is still under the table.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Plonge [fin]
+<h1 class="titre-fin">DISHWASHER 🍽️</h1>
+<p class="sous-titre">Your vouchers expired in 2019. Your charm expired in 2018.</p>
+<p class="image">[Image of: you in front of a mountain of dirty plates]</p>
+<p>The manager doesn't laugh. You have to wash the dishes to pay the bill. $prenomFille left 2 hours ago.</p>
+<p>You have now been washing dishes for 3 weeks. You're actually good at it. The chef offered you a job.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Coince [fin]
+<h1 class="titre-fin">STUCK 🚽</h1>
+<p class="sous-titre">The bathroom window was smaller than your plan.</p>
+<p class="image">[Image of: your legs sticking out of a tiny bathroom window]</p>
+<p>You get stuck halfway through the window. Your legs are in the restaurant. Your head is in the street.</p>
+<p>The firefighters take 2 hours to get you out. $prenomFille filmed everything. The video has 4 million views.</p>
+<p>You are famous now. Not in a good way.</p>
+<<include "Boutons_Fin">>
