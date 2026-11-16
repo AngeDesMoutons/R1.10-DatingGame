@@ -1,0 +1,14 @@
+:: Trajet [date]
+<p class="image">[Image of: you in your best outfit, which is also your only outfit]</p>
+<p>It's D-Day. Your date starts in 10 minutes.</p>
+<p>How do you get there?</p>
+<div class="choix">
+	<<if $lieu is "Restaurant">>
+		[[🏃 Run|Resto_1_Arrivee][$arrivee to "course"]]
+		[[🚌 Take the bus|Resto_1_Arrivee][$arrivee to "bus"]]
+	<<else>>
+		[[🏃 Run|Parc_1_Arrivee][$arrivee to "course"]]
+		[[🚌 Take the bus|Parc_1_Arrivee][$arrivee to "bus"]]
+	<</if>>
+	[[🏛️ Cut through the main square. It's faster.|Fin_Ecrase]]
+</div>

@@ -1,0 +1,97 @@
+:: Parc_1_Arrivee [date]
+<<if $arrivee is "bus">><<set $genance += 10>><<else>><<set $genance += 5>><</if>>
+<p class="image">[Image of: a peaceful park. Too peaceful. Suspiciously peaceful.]</p>
+<<if $arrivee is "bus">>
+	<p>You arrive 25 minutes late. The bus driver took a little detour to drop off his cousin.</p>
+<<else>>
+	<p>You arrive right on time, but drenched in sweat. A jogger looks at you with respect.</p>
+<</if>>
+<<if $difficile>>
+	<p>$prenomFille is sitting on a bench, reading. There's a sign on the bench : RESERVED. She reserved it.</p>
+	<p><b>$prenomFille :</b> You can stand.</p>
+<<else>>
+	<p>$prenomFille is already there with a picnic, a blanket, 3 balloons and her 4 dogs : Sir Barksalot, Biscuit, Biscuit 2 and Kevin.</p>
+	<p><b>$prenomFille :</b> YOU CAME!!! THE DOGS MADE YOU A CARD 🐶</p>
+<</if>>
+<p>What do you do?</p>
+<div class="choix">
+	[[🦆 Feed the ducks with the picnic bread|Parc_2_Oie][$choix to "canards"]]
+	[[☁️ Lie down on the grass and look at the clouds|Fin_Golf]]
+	[[🚶 Suggest a walk around the lake|Parc_2_Oie][$choix to "lac"]]
+</div>
+
+
+:: Parc_2_Oie [date]
+<<if $choix is "canards">>
+	<<if $difficile>>
+		<<set $genance += 10>>
+		<p><b>$prenomFille :</b> Bread is bad for ducks. Did you know that. Now you know that.</p>
+	<<else>>
+		<<set $interet += 20>>
+		<p>$prenomFille gives a name to every single duck. There are 46 ducks. It takes an hour. She has never been this happy.</p>
+	<</if>>
+<<else>>
+	<<if $difficile>>
+		<<set $interet += 20>>
+		<p>She walks fast. Very fast. You have to jog to keep up. She seems to like that you keep up.</p>
+	<<else>>
+		<<set $interet += 15>>
+		<p>She holds your hand. And the 4 leashes. The dogs pull in 4 different directions.</p>
+	<</if>>
+<</if>>
+<p>Suddenly, a goose appears.</p>
+<p class="image">[Image of: a HUGE goose, staring right at you]</p>
+<p>It is huge. It hisses. It has clearly chosen violence.</p>
+<div class="choix">
+	[[😠 Stare back. Show it who's the boss.|Fin_Oie]]
+	[[🙈 Hide behind her|Parc_3_Coucher][$choix to "cacher"]]
+	[[🥪 Offer the goose your sandwich|Parc_3_Coucher][$choix to "sandwich"]]
+</div>
+
+
+:: Parc_3_Coucher [date]
+<<if $choix is "cacher">>
+	<<if $difficile>>
+		<<set $genance += 30>>
+		<p>$prenomFille steps aside. The goose looks at you. You look at the goose. $prenomFille films everything.</p>
+		<p>You survive. Barely. Your shoe did not.</p>
+	<<else>>
+		<<set $interet += 20>>
+		<<set $genance += 10>>
+		<p>$prenomFille fights the goose. With her bare hands. She WINS. The 4 dogs cheer. She is now your hero.</p>
+	<</if>>
+<<else>>
+	<<set $interet += 20>>
+	<p>The goose takes the sandwich, looks at you with respect, and leaves. $prenomFille is impressed. Apparently, you speak goose.</p>
+<</if>>
+<p>The sun sets over the lake. The ducks go to sleep. The goose is watching you from far away.</p>
+<p>$prenomFille looks at you. This is it. The moment.</p>
+<div class="choix">
+	<<link "💋 Lean in for a kiss">>
+		<<if $interet gte 100>><<goto "Fin_Parfaite">>
+		<<elseif $interet gte 60>><<goto "Fin_Friendzone">>
+		<<else>><<goto "Fin_Esquive">>
+		<</if>>
+	<</link>>
+	[[🤝 Give her a firm, professional handshake|Fin_LinkedIn]]
+	[[👩 Invite her to meet your mom tomorrow|Fin_Adoptee]]
+</div>
+
+:: Fin_Golf [fin]
+<h1 class="titre-fin">HOLE IN ONE ⛳</h1>
+<p class="sous-titre">It wasn't grass. It was a golf course.</p>
+<p class="image">[Image of: you lying on the green, a golf ball stuck on your forehead]</p>
+<p>You lie down and close your eyes. Peaceful. Then : FORE!</p>
+<p>A golf ball hits you right between the eyes. The golfer is thrilled : it's his first hole in one.</p>
+<p>You wake up 2 days later at the hospital. $prenomFille sent you a card. It says "get well soon, guy from the park".</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Oie [fin]
+<h1 class="titre-fin">HONKED 🦢</h1>
+<p class="sous-titre">You chose violence. The goose chose more violence.</p>
+<p class="image">[Image of: you running for your life, a goose right behind you]</p>
+<p>The goose chases you across the park. Then across the city. Then across the country.</p>
+<p>3 days later, you collapse at the border. The goose stands over you and says : HONK.</p>
+<p>The goose now lives in your apartment. $prenomFille follows the goose on Instagramme. Not you. The goose.</p>
+<<include "Boutons_Fin">>

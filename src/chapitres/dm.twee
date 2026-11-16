@@ -1,0 +1,313 @@
+:: DM_Haut
+<div class="dm-haut">
+	<b>Instagramme</b><br>
+	<b>$prenomFille</b>
+	<<if $difficile>><span class="gris">(active 3h ago)</span><<else>><span class="gris">(🟢 active now)</span><</if>>
+</div>
+
+
+:: DM_1_Accroche [dm]
+<<include "DM_Haut">>
+<p class="info">You and $prenomFille follow each other on Instagramme. Write your first message!</p>
+<p class="info">(It will only decide the rest of your life.)</p>
+<div class="choix">
+	[[hey|DM_Hey]]
+	[[Are you a parking ticket? Because you've got FINE written all over you 😏|DM_Ticket]]
+	[[📎 Send file : 10_reasons_to_date_me.pptx|DM_Pptx]]
+	[[Hello, we've been trying to reach you about your car's extended warranty.|DM_Garantie]]
+</div>
+
+:: DM_Hey [dm]
+<<include "DM_Haut">>
+<<if not $difficile>><<set $interet += 15>><</if>>
+<div class="moi">hey</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">>
+	<<next 2s>><div class="elle">?</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">HEYYYY 🐶🐶🐶</div>
+	<<next 1s>><div class="elle">omg hiiii!!!!!</div>
+	<<next 1s>><div class="elle">I was literally JUST thinking about u (I don't know u yet but still)</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Ticket [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $genance += 15>><<else>><<set $interet += 20>><</if>>
+<div class="moi">Are you a parking ticket? Because you've got FINE written all over you 😏</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">I don't drive.</div>
+	<<next 1s>><p class="info">⚠️ $prenomFille took a screenshot of the conversation.</p>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">HAHAHAHAHAHA 😂😂😂</div>
+	<<next 1s>><div class="elle">I GOT A PARKING TICKET YESTERDAY</div>
+	<<next 1s>><div class="elle">HOW DID U KNOW 😳</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Pptx [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $interet += 5>><<set $genance += 20>><<else>><<set $interet += 20>><<set $genance += 5>><</if>>
+<div class="moi">📎 10_reasons_to_date_me.pptx (48 MB)</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">is this a virus</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">WAIT</div>
+	<<next 1s>><div class="elle">SLIDE 7 HAS A DOG ON IT 😭😭😭</div>
+	<<next 1s>><div class="elle">📎 11_reasons_ur_right.pptx (212 MB)</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Garantie [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $interet += 25>><<else>><<set $interet += 10>><</if>>
+<div class="moi">Hello, we've been trying to reach you about your car's extended warranty.</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">...</div>
+	<<next 2s>><div class="elle">ok that was actually funny.</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">OMG I DON'T EVEN HAVE A CAR</div>
+	<<next 1s>><div class="elle">BUT TELL ME EVERYTHING 🚗🚗🚗</div>
+	<<next 1s>><<include "DM_2_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_2_Choix
+<<if $difficile>><div class="elle">what do you want.</div><<else>><div class="elle">TELL ME EVERYTHING ABOUT U 🐶✨</div><</if>>
+<div class="choix">
+	[[What's your zodiac sign? And your blood type?|DM_Astro]]
+	[[📷 Send her a cute pic of your cat|DM_Pied]]
+	[[✍️ Write her a romantic poem (thanks ChatGPT)|DM_Poeme]]
+	[[idk. bored.|DM_Ennui]]
+</div>
+
+:: DM_Astro [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $genance += 20>><<else>><<set $interet += 20>><</if>>
+<div class="moi">What's your zodiac sign? And your blood type?</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">Why do you need my blood type.</div>
+	<<next 1s>><p class="info">⚠️ $prenomFille took a screenshot of the conversation.</p>
+	<<next 1s>><div class="elle">my brother is a cop btw.</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">LEO ♌ AND O+ !!!</div>
+	<<next 1s>><div class="elle">why do u need my blood type 😳</div>
+	<<next 1s>><div class="elle">(I'll tell u anyway, I'm a universal donor 🩸💖 if u ever need a kidney just ask)</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Pied [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $genance += 35>><<else>><<set $interet += 10>><<set $genance += 15>><</if>>
+<div class="moi">[Image of: your foot. Not your cat. Your foot.]</div>
+<div class="moi">WAIT</div>
+<div class="moi">WRONG PIC</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><p class="info">⚠️ $prenomFille took a screenshot of the conversation.</p>
+	<<next 1s>><p class="info">⚠️ $prenomFille took another screenshot of the conversation.</p>
+	<<next 1s>><div class="elle">Wow.</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">omg 😳</div>
+	<<next 1s>><div class="elle">is that ur foot</div>
+	<<next 1s>><div class="elle">ur toes look like little sausages 🌭🌭🌭 I LOVE IT</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Poeme [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $interet += 5>><<set $genance += 15>><<else>><<set $interet += 20>><</if>>
+<div class="moi">Sure! Here is a romantic poem for your crush: 🌹<br><br>Roses are red,<br>your smile is a star,<br>I would cross the whole ocean<br>if I had a car.<br><br>Would you like me to make it more romantic? 😊</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">Tell ChatGPT I said no.</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">U WROTE THIS FOR ME??? 😭😭😭</div>
+	<<next 1s>><div class="elle">who is 'your crush' lol</div>
+	<<next 1s>><div class="elle">wait is it me 👉👈</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Ennui [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $interet += 20>><<else>><<set $interet += 10>><</if>>
+<div class="moi">idk. bored.</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">>
+	<<next 2s>><div class="elle">same.</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">BORED?? 😱</div>
+	<<next 1s>><div class="elle">NOT ON MY WATCH</div>
+	<<next 1s>><div class="elle">[GIF of: a golden retriever doing a backflip]</div>
+	<<next 1s>><<include "DM_3_Choix">>
+	<</timed>>
+<</if>>
+
+
+:: DM_3_Choix
+<<if $difficile>>
+	<div class="elle"><<print either("brb", "k", "...")>></div>
+<<else>>
+	<div class="elle"><<print either("btw my dog says hi 🐶", "sorry my cat walked on my keyboard jjjjjjjjjjjjj", "I just tripped over nothing lol 🙃")>></div>
+<</if>>
+<div class="choix">
+	[[You have beautiful eyes 😍|DM_Oeufs]]
+	[[🎞️ Send a GIF|DM_Shrek]]
+	[[(Say nothing. Wait for her to talk.)|DM_Attendre]]
+</div>
+
+:: DM_Oeufs [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $genance += 20>><<else>><<set $interet += 20>><<set $genance += 5>><</if>>
+<div class="moi">You have beautiful eggs 🥚</div>
+<div class="moi">eyes*</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">My eggs?</div>
+	<<next 1s>><p class="info">⚠️ $prenomFille took a screenshot of the conversation.</p>
+	<<next 1s>><div class="elle">blocking you would take too much effort.</div>
+	<<next 1s>><<include "DM_4_Lieu">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">THANK U!!!!</div>
+	<<next 1s>><div class="elle">I HAVE 12 IN MY FRIDGE 🥚🥚🥚</div>
+	<<next 1s>><div class="elle">do u wanna see them</div>
+	<<next 1s>><<include "DM_4_Lieu">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Shrek [dm]
+<<include "DM_Haut">>
+<<if $difficile>><<set $interet += 20>><<else>><<set $interet += 15>><</if>>
+<div class="moi">[GIF of: Shrek winking slowly]</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">...</div>
+	<<next 2s>><div class="elle">Shrek is the only man I respect.</div>
+	<<next 1s>><<include "DM_4_Lieu">>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">[GIF of: Donkey winking back]</div>
+	<<next 1s>><div class="elle">WE'RE LITERALLY SHREK AND DONKEY 💚</div>
+	<<next 1s>><<include "DM_4_Lieu">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Attendre [dm]
+<<include "DM_Haut">>
+<div class="typing">$prenomFille is typing...</div>
+<<if $difficile>>
+	<<timed 3s>><<remove ".typing">>
+	<<next 2s>><div class="choix">[[?|DM_Silence_2]]</div>
+	<</timed>>
+<<else>>
+	<<set $interet += 20>>
+	<<timed 1s>><<remove ".typing">><div class="elle">hello?</div>
+	<<next 1s>><div class="elle">HELLO??</div>
+	<<next 1s>><div class="elle">did u die 😭</div>
+	<<next 1s>><div class="elle">pls don't be dead I already told my mom about u</div>
+	<<next 1s>><<include "DM_4_Lieu">>
+	<</timed>>
+<</if>>
+
+
+:: DM_Silence_2 [dm]
+<<include "DM_Haut">>
+<<set $genance += 10>>
+<div class="moi">?</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<timed 3s>><<remove ".typing">>
+<<next 2s>><div class="choix">[[??|DM_Silence_3]]</div>
+<</timed>>
+
+
+:: DM_Silence_3 [dm]
+<<include "DM_Haut">>
+<<set $genance += 10>>
+<div class="moi">?</div>
+<div class="moi">??</div>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<timed 3s>><<remove ".typing">>
+<<next 2s>><div class="choix">[[hellooooo?? 👀|Fin_Ghost][$genance += 10]]</div>
+<</timed>>
+
+:: DM_4_Lieu
+<<if not $difficile>><div class="elle">WE SHOULD MEET!!!! like TODAY. like NOW. where do u wanna go??</div><</if>>
+<p class="info">Time to ask her out. Where?</p>
+<div class="choix">
+	[[Dinner at a restaurant? 🍝|DM_Reponse][$lieu to "Restaurant"]]
+	[[A walk in the park? 🌳|DM_Reponse][$lieu to "Parc"]]
+	[[Let's meet at my bank. I booked us an appointment with my financial advisor 💍|Fin_Banque]]
+</div>
+
+:: DM_Reponse [dm]
+<<include "DM_Haut">>
+<<if $lieu is "Restaurant">><div class="moi">Dinner at a restaurant? 🍝</div><<else>><div class="moi">A walk in the park? 🌳</div><</if>>
+<div class="vu">Seen</div>
+<div class="typing">$prenomFille is typing...</div>
+<<if $interet lt 30>>
+	<<timed 3s>><<remove ".typing">>
+	<<next 2s>><p class="info">$prenomFille left you on Seen.</p>
+	<<next 1s>><div class="choix">[[Wait for her answer...|Fin_Ghost]]</div>
+	<</timed>>
+<<elseif $difficile>>
+	<<timed 2s>><<remove ".typing">><div class="elle">Fine.</div>
+	<<next 1s>><div class="elle">15 minutes. You're paying.</div>
+	<<next 1s>><div class="choix">[[📍 Go to the date|Trajet]]</div>
+	<</timed>>
+<<else>>
+	<<timed 1s>><<remove ".typing">><div class="elle">YES YES YES 🐶🐶🐶</div>
+	<<next 1s>><div class="elle">I'M ALREADY GETTING READY</div>
+	<<next 1s>><div class="elle">(I've been ready since u said hi)</div>
+	<<next 1s>><div class="choix">[[📍 Go to the date|Trajet]]</div>
+	<</timed>>
+<</if>>

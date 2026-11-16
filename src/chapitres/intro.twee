@@ -1,0 +1,32 @@
+:: Start
+<div class="centre">
+	<h1>Simulator Dating</h1>
+	<p class="image">[Image of: a big pink heart with a crack in it]</p>
+	<div class="choix">[[PLAY|Intro_Prenoms]]</div>
+</div>
+
+:: Intro_Prenoms
+<h2>Who are you?</h2>
+<p>Your name : <<textbox "$prenom" "">></p>
+<p>Her name : <<textbox "$prenomFille" "Idiou">></p>
+<p class="petit">Choose carefully. Or don't. Nobody reads names anyway.</p>
+<div class="choix">
+	<<link "Next" "Intro_Difficulte">>
+		<<if $prenom is "">><<set $prenom to "Player">><</if>>
+		<<if $prenomFille is "">><<set $prenomFille to "Idiou">><</if>>
+	<</link>>
+</div>
+
+
+:: Intro_Difficulte
+<h2>Choose the difficulty</h2>
+<p>Same girl. Same face. Completely different personality. Scientists still can't explain it.</p>
+<div class="mode">
+	<div class="choix">[[🐶 EASY : Golden Retriever Mode|DM_1_Accroche][$difficile to false]]</div>
+	<p>She had her morning coffee. Then a second one. Then a third one. Then she saw a dog. She loves everything and everyone. Probably even you.</p>
+</div>
+<div class="mode">
+	<div class="choix">[[🧊 HARD : Left On Read Mode|DM_1_Accroche][$difficile to true]]</div>
+	<p>She didn't have her coffee. Her phone is at 2%. She has 847 unread messages, and yours will be number 848.</p>
+</div>
+<p><label><<checkbox "$sansRetour" false true>> <b>No take-backs mode :</b> the Back button is disabled. Like in real life. One mistake and you start over.</label></p>

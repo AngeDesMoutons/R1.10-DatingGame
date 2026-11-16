@@ -1,0 +1,119 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.centre {
+	text-align: center;
+}
+
+.petit {
+	font-size: 0.9em;
+	color: #999;
+}
+
+.image {
+	border: 1px dashed gray;
+	padding: 10px;
+	text-align: center;
+	color: #aaa;
+	font-style: italic;
+}
+
+.choix a {
+	display: block;
+	margin: 8px 0;
+	padding: 10px;
+	border: 1px solid #555;
+	border-radius: 8px;
+	text-decoration: none;
+}
+
+.choix a:hover {
+	border-color: hotpink;
+}
+
+.mode {
+	border: 1px solid #444;
+	border-radius: 8px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.dm-haut {
+	border-bottom: 1px solid #444;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.gris, .vu, .typing, .info {
+	color: gray;
+	font-size: 0.9em;
+}
+
+.info {
+	text-align: center;
+}
+
+.moi, .elle {
+	width: fit-content;
+	max-width: 70%;
+	padding: 8px 12px;
+	border-radius: 15px;
+	margin: 5px 0;
+}
+
+.moi {
+	margin-left: auto;
+	background-color: #3797f0;
+	color: white;
+}
+
+.elle {
+	background-color: #333;
+}
+
+.vu {
+	text-align: right;
+}
+
+.typing {
+	font-style: italic;
+}
+
+.titre-fin {
+	text-align: center;
+	font-size: 3em;
+	color: red;
+	background-color: black;
+	padding: 10px;
+	letter-spacing: 5px;
+	animation: apparition 1s;
+}
+
+.titre-fin.bien {
+	color: hotpink;
+}
+
+@keyframes apparition {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.sous-titre {
+	text-align: center;
+	font-style: italic;
+	font-size: 1.2em;
+}
+
+.boutons-fin {
+	text-align: center;
+}
+
+.boutons-fin a {
+	display: inline-block;
+	margin: 5px;
+	padding: 10px 20px;
+	border: 1px solid #888;
+	border-radius: 8px;
+	text-decoration: none;
+}

@@ -1,0 +1,101 @@
+:: Boutons_Fin
+<p class="centre">💘 Interest : $interet / 100 &nbsp; 😬 Cringe : $genance / 100</p>
+<div class="boutons-fin">
+	<<if not $sansRetour>><<back "Undo my last choice">><</if>>
+	<<link "Play again">><<run Engine.restart()>><</link>>
+</div>
+
+
+:: Fin_Parfaite [fin]
+<h1 class="titre-fin bien">IT'S A MATCH 💘</h1>
+<p class="sous-titre">You did it. Against all odds. And against all logic.</p>
+<p class="image">[Image of: you and $prenomFille kissing, fireworks in the background]</p>
+<p>You kissed. Somewhere, a violin started playing. It was <<if $lieu is "Restaurant">>the waiter<<else>>a jogger<</if>>. He has been practicing for this exact moment for 15 years.</p>
+<<if $difficile>>
+	<p>$prenomFille replied to your next text in under 2 minutes. Her friends are worried about her.</p>
+<<else>>
+	<p>$prenomFille has already named your future kids. And your future kids' dogs.</p>
+<</if>>
+<p>She changed her Instagramme bio to "taken by $prenom 💍". It has been 3 hours.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Friendzone [fin]
+<h1 class="titre-fin">FRIENDZONED 🤝</h1>
+<p class="sous-titre">"You're like a brother to me."</p>
+<p class="image">[Image of: $prenomFille giving you a very friendly pat on the back]</p>
+<p>She gives you a big hug. A very friendly hug. A pat-on-the-back hug.</p>
+<p>She has known you for 2 hours, but she adds you to the group chat "The Besties 💅" and asks for your advice about her crush.</p>
+<p>Her crush is <<if $lieu is "Restaurant">>the waiter<<else>>the goose<</if>>.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Esquive [fin]
+<h1 class="titre-fin">DODGED 💨</h1>
+<p class="sous-titre">She dodged so fast she broke the sound barrier.</p>
+<p class="image">[Image of: $prenomFille as a blur, and you kissing someone else]</p>
+<p>You kissed the person standing behind her instead. <<if $lieu is "Restaurant">>The waiter, Bernard.<<else>>A jogger named Bernard.<</if>></p>
+<p>Bernard kissed back.</p>
+<p>You and Bernard have been married for 3 years now. It's nice. You have a dog.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_LinkedIn [fin]
+<h1 class="titre-fin">CONNECTED 💼</h1>
+<p class="sous-titre">Nothing says romance like a firm handshake.</p>
+<p class="image">[Image of: a LinkedIn-style notification with a handshake emoji]</p>
+<p>She shakes your hand back. Firmly. Professionally. "Let's keep in touch."</p>
+<p>The next morning, you get a notification : <i>$prenomFille has endorsed you for : Handshakes.</i></p>
+<p>She now sends you job offers every week.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Adoptee [fin]
+<h1 class="titre-fin">ADOPTED 🏠</h1>
+<p class="sous-titre">She met your mom. It went too well.</p>
+<p class="image">[Image of: your mom proudly holding adoption papers, $prenomFille next to her]</p>
+<p>Your mom loved $prenomFille so much that she adopted her. The paperwork took 2 days.</p>
+<p>$prenomFille is now your sister. <<if $difficile>>She still doesn't talk to you, but she calls your mom every day.<<else>>She calls your mom "Mom" and your dog "my brother".<</if>></p>
+<p>Family dinners are... complicated.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Ghost [fin]
+<h1 class="titre-fin">GHOSTED 👻</h1>
+<p class="sous-titre">Seen. Just seen.</p>
+<<timed 1s>><p class="info">3 days later...</p>
+<<next>><p class="info">2 weeks later...</p>
+<<next>><p class="info">4 years later...</p>
+<<next>><div class="moi">happy birthday!! 🎂</div>
+<<next 2s>><p class="info">This account no longer exists.</p>
+<<next>><<include "Boutons_Fin">>
+<</timed>>
+
+
+:: Fin_Police [fin]
+<h1 class="titre-fin">ARRESTED 🚨</h1>
+<p class="sous-titre">Cringe : 100%. $prenomFille called the police.</p>
+<p class="image">[Image of: you in the back of a police car, still holding your phone]</p>
+<p>The officer reads the report out loud. It is 4 pages long. The other officers laugh so hard that one of them has to sit down.</p>
+<p>You spend the night in a cell with a guy named Kevin. Kevin is a better listener than $prenomFille ever was.</p>
+<p>Maybe that's the real love story.</p>
+<<include "Boutons_Fin">>
+
+:: Fin_Banque [fin]
+<h1 class="titre-fin">DECLINED 💳</h1>
+<p class="sous-titre">A date. At a BANK.</p>
+<p class="image">[Image of: a card terminal displaying "DECLINED"]</p>
+<p>$prenomFille didn't even answer. She blocked you, then she blocked your financial advisor, then she blocked the bank.</p>
+<p>Your date request has been declined. Reason : insufficient charm.</p>
+<p>The next day, the bank calls you : you also have insufficient funds.</p>
+<<include "Boutons_Fin">>
+
+
+:: Fin_Ecrase [fin]
+<h1 class="titre-fin">CRUSHED 🧱</h1>
+<p class="sous-titre">You wanted a crush. You got crushed.</p>
+<p class="image">[Image of: you, flat as a pancake under a paving stone, still holding a rose]</p>
+<p>There was a protest in the main square. Nobody knows what it was about. Not even the protesters.</p>
+<p>A paving stone flew across the square and found you. Like love never did.</p>
+<p>$prenomFille waited for you for 3 hours. Then she went home. She never knew.</p>
+<<include "Boutons_Fin">>
